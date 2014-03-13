@@ -1,0 +1,9 @@
+Project
+I aim to develop a code of card game "stupid". I will do that in three stages:
+Automated play engine
+Human players
+Card strenght evaluation
+AI for playing game, with neural networks.
+GUI
+Multiplayer on one PC
+Multiplayer online

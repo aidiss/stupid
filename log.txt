@@ -1,0 +1,300 @@
+Trump card available
+These two cards will be compared:  [8, 'H'] [13, 'S']
+These two cards will be compared:  [8, 'H'] [6, 'C']
+These two cards will be compared:  [8, 'H'] [9, 'C']
+You have so many possible defence choices:  1
+ You have the following choices:  [[6, 'D']]
+
+############################## Round Nr.: 19
+Trump deck: [[6, 'H'], [14, 'S'], [11, 'S'], [7, 'S'], [12, 'H'], [6, 'S'], [13,
+ 'H']]
+
+ Attacker hand: [[11, 'H'], [10, 'H'], [7, 'H']]
+ Defender hand: [[10, 'S'], [10, 'C'], [13, 'C'], [13, 'S'], [6, 'C'], [9, 'C']]
+
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [8, 6]
+bita [[[8, 'H'], [6, 'D']]]
+
+############################## Round Nr.: 20
+Trump deck: [[6, 'H'], [14, 'S'], [11, 'S'], [7, 'S']]
+
+ Attacker hand: [[10, 'S'], [10, 'C'], [13, 'C'], [13, 'S'], [6, 'C'], [9, 'C']]
+
+ Defender hand: [[11, 'H'], [10, 'H'], [7, 'H'], [13, 'H'], [6, 'S'], [12, 'H']]
+
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [10, 'S']
+
+These two cards will be compared:  [10, 'S'] [11, 'H']
+These two cards will be compared:  [10, 'S'] [10, 'H']
+Reflect possible
+These two cards will be compared:  [10, 'S'] [7, 'H']
+These two cards will be compared:  [10, 'S'] [13, 'H']
+These two cards will be compared:  [10, 'S'] [6, 'S']
+Suit actions
+These two cards will be compared:  [10, 'S'] [12, 'H']
+You have so many possible defence choices:  1
+ You have the following choices:  [[10, 'H']]
+
+############################## Round Nr.: 21
+Trump deck: [[6, 'H'], [14, 'S'], [11, 'S'], [7, 'S']]
+
+ Attacker hand: [[10, 'C'], [13, 'C'], [13, 'S'], [6, 'C'], [9, 'C']]
+ Defender hand: [[11, 'H'], [7, 'H'], [13, 'H'], [6, 'S'], [12, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [10, 10]
+Reflect possible
+onboard_numbers [10, 10]
+Reflect possible
+onboard_numbers [10, 10]
+Reflect possible
+You have so many possible attack choices:  1
+ You have the following choices:  [[10, 'C']]
+onboard_numbers [10, 10]
+Reflect possible
+Attacker chose:  [10, 'C']
+
+These two cards will be compared:  [10, 'C'] [11, 'H']
+These two cards will be compared:  [10, 'C'] [7, 'H']
+These two cards will be compared:  [10, 'C'] [13, 'H']
+These two cards will be compared:  [10, 'C'] [6, 'S']
+These two cards will be compared:  [10, 'C'] [12, 'H']
+You have so many possible defence choices:  0
+ You have the following choices:  []
+namo [[[10, 'S'], [10, 'H']]]
+Defending player takes cards:  []
+
+############################## Round Nr.: 22
+Trump deck: [[6, 'H'], [14, 'S'], [11, 'S'], [7, 'S']]
+
+ Attacker hand: [[13, 'C'], [13, 'S'], [6, 'C'], [9, 'C']]
+ Defender hand: [[11, 'H'], [7, 'H'], [13, 'H'], [6, 'S'], [12, 'H'], [10, 'S'],
+ [10, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [13, 'C']
+
+These two cards will be compared:  [13, 'C'] [11, 'H']
+These two cards will be compared:  [13, 'C'] [7, 'H']
+These two cards will be compared:  [13, 'C'] [13, 'H']
+Reflect possible
+These two cards will be compared:  [13, 'C'] [6, 'S']
+These two cards will be compared:  [13, 'C'] [12, 'H']
+These two cards will be compared:  [13, 'C'] [10, 'S']
+These two cards will be compared:  [13, 'C'] [10, 'H']
+You have so many possible defence choices:  1
+ You have the following choices:  [[13, 'H']]
+
+############################## Round Nr.: 23
+Trump deck: [[6, 'H'], [14, 'S'], [11, 'S'], [7, 'S']]
+
+ Attacker hand: [[13, 'S'], [6, 'C'], [9, 'C']]
+ Defender hand: [[11, 'H'], [7, 'H'], [6, 'S'], [12, 'H'], [10, 'S'], [10, 'H']]
+
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [13, 13]
+Reflect possible
+onboard_numbers [13, 13]
+Reflect possible
+onboard_numbers [13, 13]
+Reflect possible
+You have so many possible attack choices:  1
+ You have the following choices:  [[13, 'S']]
+onboard_numbers [13, 13]
+Reflect possible
+Attacker chose:  [13, 'S']
+
+These two cards will be compared:  [13, 'S'] [11, 'H']
+These two cards will be compared:  [13, 'S'] [7, 'H']
+These two cards will be compared:  [13, 'S'] [6, 'S']
+Suit actions
+These two cards will be compared:  [13, 'S'] [12, 'H']
+These two cards will be compared:  [13, 'S'] [10, 'S']
+Suit actions
+These two cards will be compared:  [13, 'S'] [10, 'H']
+You have so many possible defence choices:  0
+ You have the following choices:  []
+namo [[[13, 'C'], [13, 'H']]]
+Defending player takes cards:  []
+
+############################## Round Nr.: 24
+Trump deck: [[6, 'H'], [14, 'S'], [11, 'S'], [7, 'S']]
+
+ Attacker hand: [[6, 'C'], [9, 'C']]
+ Defender hand: [[11, 'H'], [7, 'H'], [6, 'S'], [12, 'H'], [10, 'S'], [10, 'H'],
+ [13, 'C'], [13, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [6, 'C']
+
+These two cards will be compared:  [6, 'C'] [11, 'H']
+These two cards will be compared:  [6, 'C'] [7, 'H']
+These two cards will be compared:  [6, 'C'] [6, 'S']
+Reflect possible
+These two cards will be compared:  [6, 'C'] [12, 'H']
+These two cards will be compared:  [6, 'C'] [10, 'S']
+These two cards will be compared:  [6, 'C'] [10, 'H']
+These two cards will be compared:  [6, 'C'] [13, 'C']
+Suit actions
+Higher same suit
+These two cards will be compared:  [6, 'C'] [13, 'H']
+You have so many possible defence choices:  2
+ You have the following choices:  [[6, 'S'], [13, 'C']]
+
+############################## Round Nr.: 25
+Trump deck: [[6, 'H'], [14, 'S'], [11, 'S'], [7, 'S']]
+
+ Attacker hand: [[9, 'C']]
+ Defender hand: [[11, 'H'], [7, 'H'], [12, 'H'], [10, 'S'], [10, 'H'], [13, 'C']
+, [13, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [6, 6]
+bita [[[6, 'C'], [6, 'S']]]
+
+############################## Round Nr.: 26
+Trump deck: []
+
+ Attacker hand: [[11, 'H'], [7, 'H'], [12, 'H'], [10, 'S'], [10, 'H'], [13, 'C']
+, [13, 'H']]
+ Defender hand: [[9, 'C'], [7, 'S'], [11, 'S'], [14, 'S'], [6, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [11, 'H']
+
+These two cards will be compared:  [11, 'H'] [9, 'C']
+These two cards will be compared:  [11, 'H'] [7, 'S']
+These two cards will be compared:  [11, 'H'] [11, 'S']
+Reflect possible
+These two cards will be compared:  [11, 'H'] [14, 'S']
+These two cards will be compared:  [11, 'H'] [6, 'H']
+Suit actions
+You have so many possible defence choices:  1
+ You have the following choices:  [[11, 'S']]
+
+############################## Round Nr.: 27
+Trump deck: []
+
+ Attacker hand: [[7, 'H'], [12, 'H'], [10, 'S'], [10, 'H'], [13, 'C'], [13, 'H']
+]
+ Defender hand: [[9, 'C'], [7, 'S'], [14, 'S'], [6, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [11, 11]
+bita [[[11, 'H'], [11, 'S']]]
+
+############################## Round Nr.: 28
+Trump deck: []
+
+ Attacker hand: [[9, 'C'], [7, 'S'], [14, 'S'], [6, 'H']]
+ Defender hand: [[7, 'H'], [12, 'H'], [10, 'S'], [10, 'H'], [13, 'C'], [13, 'H']
+]
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [9, 'C']
+
+These two cards will be compared:  [9, 'C'] [7, 'H']
+These two cards will be compared:  [9, 'C'] [12, 'H']
+These two cards will be compared:  [9, 'C'] [10, 'S']
+These two cards will be compared:  [9, 'C'] [10, 'H']
+These two cards will be compared:  [9, 'C'] [13, 'C']
+Suit actions
+Higher same suit
+These two cards will be compared:  [9, 'C'] [13, 'H']
+You have so many possible defence choices:  1
+ You have the following choices:  [[13, 'C']]
+
+############################## Round Nr.: 29
+Trump deck: []
+
+ Attacker hand: [[7, 'S'], [14, 'S'], [6, 'H']]
+ Defender hand: [[7, 'H'], [12, 'H'], [10, 'S'], [10, 'H'], [13, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [9, 13]
+bita [[[9, 'C'], [13, 'C']]]
+
+############################## Round Nr.: 30
+Trump deck: []
+
+ Attacker hand: [[7, 'H'], [12, 'H'], [10, 'S'], [10, 'H'], [13, 'H']]
+ Defender hand: [[7, 'S'], [14, 'S'], [6, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [7, 'H']
+
+These two cards will be compared:  [7, 'H'] [7, 'S']
+Reflect possible
+These two cards will be compared:  [7, 'H'] [14, 'S']
+These two cards will be compared:  [7, 'H'] [6, 'H']
+Suit actions
+You have so many possible defence choices:  1
+ You have the following choices:  [[7, 'S']]
+
+############################## Round Nr.: 31
+Trump deck: []
+
+ Attacker hand: [[12, 'H'], [10, 'S'], [10, 'H'], [13, 'H']]
+ Defender hand: [[14, 'S'], [6, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [7, 7]
+bita [[[7, 'H'], [7, 'S']]]
+
+############################## Round Nr.: 32
+Trump deck: []
+
+ Attacker hand: [[14, 'S'], [6, 'H']]
+ Defender hand: [[12, 'H'], [10, 'S'], [10, 'H'], [13, 'H']]
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [14, 'S']
+
+These two cards will be compared:  [14, 'S'] [12, 'H']
+These two cards will be compared:  [14, 'S'] [10, 'S']
+Suit actions
+These two cards will be compared:  [14, 'S'] [10, 'H']
+These two cards will be compared:  [14, 'S'] [13, 'H']
+You have so many possible defence choices:  0
+ You have the following choices:  []
+namo [[[14, 'S']]]
+Defending player takes cards:  []
+
+############################## Round Nr.: 33
+Trump deck: []
+
+ Attacker hand: [[6, 'H']]
+ Defender hand: [[12, 'H'], [10, 'S'], [10, 'H'], [13, 'H'], [14, 'S']]
+Trump show: [11, 'D']
+Trump suit: D
+Attacker chose:  [6, 'H']
+
+These two cards will be compared:  [6, 'H'] [12, 'H']
+Suit actions
+Higher same suit
+These two cards will be compared:  [6, 'H'] [10, 'S']
+These two cards will be compared:  [6, 'H'] [10, 'H']
+Suit actions
+Higher same suit
+These two cards will be compared:  [6, 'H'] [13, 'H']
+Suit actions
+Higher same suit
+These two cards will be compared:  [6, 'H'] [14, 'S']
+You have so many possible defence choices:  3
+ You have the following choices:  [[12, 'H'], [10, 'H'], [13, 'H']]
+
+############################## Round Nr.: 34
+Trump deck: []
+
+ Attacker hand: []
+ Defender hand: [[10, 'S'], [10, 'H'], [13, 'H'], [14, 'S']]
+Trump show: [11, 'D']
+Trump suit: D
+onboard_numbers [6, 12]
+bita [[[6, 'H'], [12, 'H']]]
+Press any key to continue . . .
