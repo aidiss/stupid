@@ -12,11 +12,12 @@ Number of players =
 ##IL. Deck dependence on number of players.
 
 ##Large Deck Use one deck of 52 cards. Remove the Jokers.
-def deck_size(large_deck or small_deck)
-def Large_deck = #Card values in ascending order: 2 3 4 5 6 7 8 9 10 J Q K A trump.
+def deck_size(large_deck or small_deck):
+
+def large_deck = #Card values in ascending order: 2 3 4 5 6 7 8 9 10 J Q K A trump.
 
 ##Small Deck (preferable). Use one deck of 52 cards. Remove the Jokers, as well as all the cards of a face value of five or less (except the Aces).
-def Small_deck = #Card values in ascending order: 6 7 8 9 10 J Q K A trump.
+def small_deck = #Card values in ascending order: 6 7 8 9 10 J Q K A trump.
 
 #Preparation. Except for the first game of the evening, the loser of the previous game is the dealer. #NI(Not important). whos dealer. Impacts only whos given first card. 
 #    Shuffle the cards. #DONE
@@ -35,7 +36,7 @@ def Small_deck = #Card values in ascending order: 6 7 8 9 10 J Q K A trump.
 #        Pe-re-vod-noy (pass the buck). 
 #    Podkidnoy is the most popular. This variation will be described in the main body of the rules. The rules for the other two variations will descibed in the Variations section.
 
-def Attacking_phase ###can it be describe as phase?
+def attacking_phase ###can it be describe as phase?
 
 #    Attacker reveals a card from his hand by placing it on the table so all can see. Hint A*.
 def atackers_choice =
