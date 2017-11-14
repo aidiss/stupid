@@ -1,3 +1,5 @@
-#project
+"""Create rules by analyzing real game
 
-#automatic_analysing game log to create a rule_set
+Input: game log.
+Output: rule set
+"""

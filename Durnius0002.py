@@ -7,6 +7,10 @@
     #~ attack_switch is not working. Attack_switch, def
 """
 import random
+import logging
+logging.basicConfig(level='DEBUG')
+logger = logging.getLogger(__name__)
+
 
 def shuffled_deck():
     """Initiation"""
@@ -14,8 +18,8 @@ def shuffled_deck():
     for suit in ['C', 'D', 'H', 'S']:
         for num in range(6, 15):
             deck.append([(num), suit])
-    random.shuffle(deck)
-    print("Deck shuffled.", len(deck), "cards in deck")
+    #random.shuffle(deck)
+    logger.info("Deck shuffled %s cards in deck", len(deck))
     return deck
 
 
@@ -37,28 +41,8 @@ def deal_cards(deck):
     return deck[:12:2], deck[1:13:2], deck[13:-1], deck[-1]
 
 
-def attacker_switch(attacker, defender):
-    """Performs a role switch.
-
-    Todo: incorporate to rule set.
-    """
-    if attacker == "P1":
-        attacker, defender = "P2", "P1"
-    else:
-        attacker, defender = "P1", "P2"
-    return attacker, defender
-    print("Role switch!")
-
-
 def round_start(Round):
-    Round += 1
-    print("Round Nr.:", Round)
-    print("Trump deck: %s\n" % trump_deck, 
-        "Attacker hand:", hands[attacker], 
-        "Defender hand:", hands[defender], 
-        "Trump show:", trump_show,
-        "Trump suit:", trump_suit,
-    )
+
     return Round
 
   
@@ -70,6 +54,7 @@ def att_first(hands, attacker, ontable):
     if len(hands[attacker]) > 0:
         att_choice = hands[attacker].pop(0)
     ontable.append([att_choice])
+    logger.debug('Attacker chose %s', att_choice)
     return att_choice, ontable
         
 
@@ -77,19 +62,19 @@ def att_choice_list():
     """List possibilities of an attacker."""
     result = []
     onboard_numbers = [c[0] for c in plain(ontable)]
-    #~ print("onboard_numbers",onboard_numbers)
+    #~ logger.info("onboard_numbers",onboard_numbers)
     #~ if len(att_possible_cards) > 0:
             #~ att_possible_cards.pop(0)
     #~ c1 = att_choice #### #need to clarify that I look for first item in the item
     for c1 in hands[attacker]:
         if c1[0] in onboard_numbers: 
-            #~ print("Reflect possible")
+            #~ logger.info("Reflect possible")
             result.append(c1)
-    # print("Pos atts: ", result)
+    # logger.info("Pos atts: ", result)
     return result
 
 
-def def_is_def_pos(att_choice):
+def get_possible_defense_move(att_choice, hands):
     """Looking for possible defence moves.
 
     Defence moves are chosen based on:
@@ -98,27 +83,26 @@ def def_is_def_pos(att_choice):
       - defenders card
     """
     def_choice_list = []
-    c1 = att_choice  #  Need to clarify that I look for first item in the item
+    c1 = att_choice  
     for c2 in hands[defender]:
-        #  print ("These two cards will be compared: ",c1, c2)
+        logger.debug("These two cards will be compared:  %s and %s",c1, c2)
         if c1[1] == c2[1]:  # Suit actions
-            #  print("Suit actions")
+            #  logger.info("Suit actions")
             if c1[0] < c2[0]:  # Possible if higher card, suit actions.
-                # print("Higher same suit")
+                # logger.info("Higher same suit")
                 def_choice_list.append(c2)
         elif c1[1] != trump_suit and c2[1] == trump_suit:  # Trump actions
-            # print("Trump card available") 
+            # logger.info("Trump card available") 
             def_choice_list.append(c2)
         elif c1[0] == c2[0]: #Reflect action
-            # print("Reflect possible")
+            # logger.info("Reflect possible")
             def_choice_list.append(c2)
-    # print("Pos defs: ", def_choice_list)
-    return def_choice_list
+    # logger.info("Pos defs: %s", def_choice_list)
+    return def_choice_list, hands
 
 
 def plain(paired_cards):
     """Plain is a pair of cards."""
-    global boom
     boom = []
     for x in paired_cards:
         boom.append(x[0])
@@ -132,88 +116,100 @@ def att_more(ontable):
 
     Todo: make iterator for attack moves.
     """
-    att_choice = []
-    if att_choice_list():
-        # print("You have so many possible attack choices: ", len(att_choice_list()), '\n', "You have the following choices: ", att_choice_list())
-        att_choice = att_choice_list()[0]
+    att_choices = att_choice_list()
+    if att_choices:
+        # logger.info("You have so many possible attack choices: ", len(att_choice_list()), '\n', "You have the following choices: ", att_choice_list())
+        att_choice = att_choices[0]
+        logger.debug('Attacker chose %s', att_choice )
         hands[attacker].remove(att_choice)
-        # ontable.append(att_choice)
+        ontable.append([att_choice, ])
+        logger.debug('On table %s', ontable)
         return att_choice
 
 
 def round_end(ontable, attacker, defender, hands):
-    """Signals end of round. 
+    """Signals end of round.
+
     Round end is called when:
        - defender defended all attacks.
        - defender cannot defend
 
        Bita or namo should be outcom of the round.
        Game could end after round also.
+
+       #inits end of round. Gives cards. (Reports stats of moves) 
+
     """
     for i in range(6 - len(hands[attacker])):
         if len(trump_deck) > 0:
             hands[attacker].append(trump_deck.pop())
+            logging.debug('adding card')
     for i in range(6 - len(hands[defender])):
         if len(trump_deck) > 0:
             hands[defender].append(trump_deck.pop())
-    attacker, defender = attacker_switch(attacker, defender)  # switches attacker
+            logging.debug('adding card')
+    attacker, defender = defender, attacker  # switches attacker
     ontable = []  # clears table
     return ontable, attacker, defender, hands
 
 
 def namo(ontable, hands, defender):
     """Vienas zaidejas pasiima ant stalo esancias kortas i ranka"""
+    assert hands[defender]
     hands[defender].extend(plain(ontable))
-    # ontable.remove(hand[defender][-1]
-    print("Defender takes cards home: ", ontable)
+    logger.debug('On table: %s', ontable)
+    ontable.remove(hands[defender][-1]) #?
+    logger.info("Defender takes cards home: %s ", ontable)
+    return ontable, hands
 
         
 def bita(ontable, deadcards):
     """Kvieciama kai zaidejas atsigina, polantys neturi daugiau kortu"""
-    print("All cards in play are moved to deadcards: ", ontable, len(deadcards))
+    logger.info("All cards in play are moved to deadcards: %s ", ontable)
     deadcards.extend(plain(ontable))
+    logger.info("Len of dead cards %s", len(deadcards))
+    logger.info('Dead cards %s', deadcards) 
     ontable = []
     return ontable, deadcards
 
 
 def round_flow(attacker, defender, ontable, hands, deadcards):
-    """This is one round"""
+    """This is one round
+
+    """
     move = 0
-    Round = round_start(Round=move)  # initializes round
-    while True:  # Round goes on
+    while True:
         move += 1
-        print("Move: %s" % move)
-        if len(ontable) == 0 and len(hands[attacker]) > 0:  # determines if its first move
-            att_choice, ontable = att_first(hands, attacker, ontable)  # initializes attackers first card
+        logger.info("Move: %s", move)
+
+        # First move
+        if len(ontable) == 0 and len(hands[attacker]) > 0:
+            att_choice, ontable = att_first(hands, attacker, ontable)
         else:
-            att_choice = att_more(ontable)  # runs second attack
-            if not att_choice:  # Attacker gives up coz no choices available
+            att_choice = att_more(ontable)
+            if not att_choice:
                 ontable, deadcards = bita(ontable, deadcards)
                 break
-        print("Att chose: ", att_choice)
-
-        possible_moves = def_is_def_pos(att_choice)  # inserts attackers choice and returns possible moves
+                
+        possible_moves, hands = get_possible_defense_move(att_choice, hands)
         if possible_moves:  
             def_choice = possible_moves[0]
-            print("Def chose: ", def_choice)
+            logger.info("Defender chose: %s", def_choice)
             ontable[-1].append(def_choice)
             hands[defender].remove(def_choice)
             if len(ontable) < 4:
-                ontable_length = len(ontable)
                 for x in ontable:
                     if x[0] == x[-1]:
-                        attacker_switch(attacker, defender)
+                        attacker, defender = defender, attacker
         else:
-            namo(ontable, hands, defender)
+            if hands[defender]:
+                ontable, hands = namo(ontable, hands, defender)
                     
-    print(
-        "A", hands[attacker], 
-        "D", hands[defender], 
-        "Ontable", ontable,
-    )
+    logger.info("Attacker %s", hands[attacker])
+    logger.info("Defender %s" , hands[defender])
+    logger.info("On table %s", ontable)
 
-    ontable, attacker, defender, hands = round_end(ontable, attacker, defender, hands) #inits end of round. Gives cards. (Reports stats of moves) 
-
+    ontable, attacker, defender, hands = round_end(ontable, attacker, defender, hands)
 
 def game_flow(hands, defender, attacker, trump_deck, deadcards):
     """Whole game.
@@ -224,21 +220,34 @@ def game_flow(hands, defender, attacker, trump_deck, deadcards):
 
     Game ends when only only one or zero players have 0 cards and there are 0 cards to take from the floor
     """
+    result = ''
+    #for i in range(2):
+    round = 0
     while hands[defender] and hands[attacker]:
+        round += 1
+        logger.info('Round %s', round)
         round_flow(attacker, defender, ontable, hands, deadcards)
+        if round == 3:
+            return 'test'
     else:
         if len(trump_deck) == 0 and len(hands[attacker]) == 0 and len(hands[defender]) == 0:
-            print("game ends draw")
+            result['result'] = 'draw'
         elif len(trump_deck) == 0 and len(hands[attacker]) > 0 and len(hands[defender]) == 0:
-            print("game ends: Defender wins", len(deadcards))
+            result = 'defender wins'
         elif len(trump_deck) == 0 and len(hands[attacker]) == 0 and len(hands[defender]) > 0:
-            print("game ends: Attacker wins")
+            result = 'attacker wins'
+            logger.info("game ends: Attacker wins")
+            return result
+
+
 
 if __name__ == "__main__":
-    print("The game 'Stupid' is now starting...", )
+    logger.info("The game 'Stupid' is now starting...", )
     deck = shuffled_deck()
     hands = {}
     hands["P1"], hands["P2"], trump_deck, trump_show = deal_cards(deck)
+    logger.info(hands)
+    logger.info(trump_show)
     trump_suit = trump_show[1]
     ontable = []  # Cards that are on table
     deadcards = []  # Dead cards are ...
@@ -246,4 +255,17 @@ if __name__ == "__main__":
     defender = "P2"
     Round = 0
 
-game_flow(hands, defender, attacker, trump_deck, deadcards)
+    result = game_flow(hands, defender, attacker, trump_deck, deadcards)
+    logger.debug('Result: %s', result)
+
+'''
+
+    Round += 1
+    logger.info("Round Nr.:", Round)
+    logger.info("Trump deck: %s\n" % trump_deck, 
+        "Attacker hand:", hands[attacker], 
+        "Defender hand:", hands[defender], 
+        "Trump show:", trump_show,
+        "Trump suit:", trump_suit,
+    )
+    '''
